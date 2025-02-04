@@ -31,6 +31,8 @@ services:
     volumes:
       - dbs_postgres_db4_data:/var/lib/postgresql/data
     command: [ "/bin/sh", "-c", "chown -R postgres:postgres /var/lib/postgresql/data && chmod -R 755 /var/lib/postgresql/data && exec docker-entrypoint.sh postgres" ]
+    networks:
+      - financial_api_network
 
 volumes:
   dbs_postgres_db4_data:
